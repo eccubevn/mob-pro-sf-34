@@ -1,0 +1,4 @@
+user_annotation:
+  type: annotation
+  resource: "./Controller"
+

@@ -1,0 +1,4 @@
+framework:
+  secret: chihieusan
+  router:
+    resource: "%kernel.project_dir%/config/routing.yml"
