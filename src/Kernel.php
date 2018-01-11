@@ -11,7 +11,10 @@ class Kernel extends \Symfony\Component\HttpKernel\Kernel
     public function registerBundles()
     {
         return [
-            new \Symfony\Bundle\FrameworkBundle\FrameworkBundle()
+            new \Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
+            new \Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+            new \Symfony\Bundle\TwigBundle\TwigBundle(),
+            new \Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle()
         ];
     }
 

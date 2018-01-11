@@ -3,26 +3,39 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class UserController extends \Symfony\Bundle\FrameworkBundle\Controller\Controller
 {
     /**
      * @Route("/login")
      *
-     * @return Response
+     * @Template("login.html.twig")
+     *
+     * @return array
      */
     public function login()
     {
-        return new Response('login');
+        $form = $this->createForm(\App\Form\LoginType::class);
+
+        return [
+            'form' => $form->createView()
+        ];
     }
 
     /**
      * @Route("/register")
      *
-     * @return Response
+     *  @Template("register.html.twig")
+     *
+     * @return array
      */
     public function register()
     {
-        return new Response('register');
+        $form = $this->createForm(\App\Form\RegisterType::class);
+
+        return [
+            'form' => $form->createView()
+        ];
     }
 }
